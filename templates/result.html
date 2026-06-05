@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Career Recommendation</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <div class="career-card">
+
+        <h1>Hello {{ name }} 👋</h1>
+
+        <h2>{{ selected.career }}</h2>
+
+        <p class="description">
+            {{ selected.description }}
+        </p>
+
+        <div class="section">
+
+            <h3>📚 Learning Roadmap</h3>
+
+            <ul>
+
+                {% for step in selected.roadmap %}
+                    <li>{{ step }}</li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <div class="section">
+
+            <h3>💻 Skills Required</h3>
+
+            <ul>
+
+                {% for skill in selected.skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <div class="section">
+
+            <h3>🎓 Learning Resources</h3>
+
+            <ul>
+
+                {% for resource in selected.resources %}
+
+                <li>
+
+                    <a href="{{ resource.link }}"
+                       target="_blank">
+
+                       {{ resource.name }}
+
+                    </a>
+
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <div class="salary-box">
+
+            <h3>💰 Expected Salary</h3>
+
+            <p>{{ selected.salary }}</p>
+
+        </div>
+
+        <a href="/" class="back-btn">
+            Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

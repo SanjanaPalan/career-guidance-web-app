@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Career Guidance Portal</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Career Guidance Portal</h1>
+
+    <p class="subtitle">
+        Find your ideal career path
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Your Name"
+            required
+        >
+
+        <select name="interest" required>
+
+            <option value="">
+                Select Career Interest
+            </option>
+
+            <option value="web">
+                Web Development
+            </option>
+
+            <option value="data">
+                Data Analytics
+            </option>
+
+        </select>
+
+        <button type="submit">
+            Get Recommendation
+        </button>
+
+    </form>
+
+    <div class="career-section">
+
+        <div class="card">
+
+            <h3>🌐 Web Developer</h3>
+
+            <p>
+                Build websites and web applications.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>📊 Data Analyst</h3>
+
+            <p>
+                Analyze data and generate insights.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
